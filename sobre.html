@@ -39,12 +39,40 @@
 
     <div style="text-align: center;">
         <img src="img/pessoas-a-trabalhar-em-equipa_23-2149136895.avif" alt="Sobre o Projeto"
-            style="max-width: 80%; height: auto;">
+            style="max-width: 80%; height: auto; border-radius: 15px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); border: 2px solid rgba(207, 40, 240, 0.3);">
     </div>
     <br><br><br><br>
+    
+    <!-- Botão scroll to top -->
+    <button class="scroll-top" id="scrollTop" onclick="scrollToTop()">↑</button>
     <footer>
         <p style="text-align: center; color: white;">© 2025 Rádio-Tec. Todos os direitos reservados.</p>
     </footer>
 </body>
 
+    <script>
+        // Mostrar/esconder botão de scroll to top
+        window.addEventListener('scroll', function() {
+            const scrollTop = document.getElementById('scrollTop');
+            if (window.pageYOffset > 300) {
+                scrollTop.classList.add('show');
+            } else {
+                scrollTop.classList.remove('show');
+            }
+        });
+        
+        // Função para voltar ao topo
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+        
+        // Efeito de hover no título
+        document.querySelector('.H1 h1').addEventListener('click', function() {
+            window.location.href = 'index2.html';
+        });
+    </script>
+    
 </html>
