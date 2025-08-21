@@ -5,6 +5,7 @@
     margin: 0 auto;
     display: flex; /*irá ajustar a altura de todos os filhos*/
     flex-wrap: wrap;
+    padding: 40px 0;
 }
 
 .blog .item-blog{
@@ -13,24 +14,65 @@
     height: 400px;
     margin: 2%;
     float: left;
-    background-color: black;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2c2c2c 100%);
     padding: 20px;
     border-radius: 25px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(207, 40, 240, 0.2);
+    position: relative;
+    overflow: hidden;
 }
+
+.blog .item-blog::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(207, 40, 240, 0.1), rgba(199, 115, 207, 0.1));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.blog .item-blog:hover::before {
+    opacity: 1;
+}
+
+.blog .item-blog:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(207, 40, 240, 0.4);
+    border-color: rgba(207, 40, 240, 0.5);
+}
+
 .blog .item-blog .item-img{
     width: 100%;
     height: 250px;
+    position: relative;
+    z-index: 1;
 }
+
 .blog .item-blog .item-img img{
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border: solid 1px white;
+    border: 2px solid rgba(207, 40, 240, 0.3);
+    border-radius: 10px;
+    transition: all 0.3s ease;
 }
+
+.blog .item-blog:hover .item-img img {
+    border-color: rgba(207, 40, 240, 0.8);
+    box-shadow: 0 4px 15px rgba(207, 40, 240, 0.3);
+}
+
 .blog .item-blog .item-texto {
     width: 100%;
     min-width: 150px;
-
+    position: relative;
+    z-index: 1;
+    margin-top: 15px;
 
 }
 
@@ -38,8 +80,35 @@ h2 {
     color: white;
     font-size: 20px;
     margin: 10px 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
+
 p {
     color: white;
     font-size: 16px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Responsividade para as músicas */
+@media (max-width: 1200px) {
+    .blog .item-blog {
+        width: 21%;
+    }
+}
+
+@media (max-width: 900px) {
+    .blog .item-blog {
+        width: 29%;
+    }
+}
+
+@media (max-width: 600px) {
+    .blog .item-blog {
+        width: 80%;
+        margin: 10px auto;
+    }
+    
+    .blog {
+        width: 95%;
+    }
 }

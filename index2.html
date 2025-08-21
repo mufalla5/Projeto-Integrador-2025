@@ -36,14 +36,37 @@
         </div>
     </div>
 
-    <button type="button" class="btn btn-secondary btn-sm" style="            margin: 0 auto;
-            justify-content: center;
-            align-items: center;
-            display: flex; background-color:  rgb(207, 40, 240);  border: none;
-            border-radius: 5px;  font-size: 18px;            margin-top: 100px;
-            " onclick=window.location.href='votar.html'>Vote em uma música <br>♫♫</button>
+    <button type="button" class="btn-vote" onclick="window.location.href='votar.html'">
+        Vote em uma música <br>♫♫
+    </button>
 
+    <!-- Botão scroll to top -->
+    <button class="scroll-top" id="scrollTop" onclick="scrollToTop()">↑</button>
 
+    <script>
+        // Mostrar/esconder botão de scroll to top
+        window.addEventListener('scroll', function() {
+            const scrollTop = document.getElementById('scrollTop');
+            if (window.pageYOffset > 300) {
+                scrollTop.classList.add('show');
+            } else {
+                scrollTop.classList.remove('show');
+            }
+        });
+        
+        // Função para voltar ao topo
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+        
+        // Efeito de hover no título
+        document.querySelector('.H1 h1').addEventListener('click', function() {
+            window.location.href = 'index2.html';
+        });
+    </script>
     <footer>
         <p style="text-align: center; color: white;">© 2025 Rádio-Tec. Todos os direitos reservados.</p>
     </footer>
